@@ -1,0 +1,8 @@
+/interface bridge 
+:for i from=0 to=254 do={ add protocol-mode=none name=("Loopback-" . $i . "")
+}
+:delay 2s;
+
+/ip address 
+:for i from=0 to=254 do={ add interface=("Loopback-" . $i . "") address=("111.111.111." . $i ."")
+}
